@@ -4,9 +4,14 @@ const helmet = require('helmet')
 
 const PORT = process.env.PORT || 3030;
 
+
 app.use(helmet.hidePoweredBy())
 
-
+app.use(
+  helmet.frameguard({
+    action: "sameorigin",
+  })
+)
 
 
 
