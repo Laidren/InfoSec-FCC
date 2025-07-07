@@ -9,7 +9,7 @@ app.use(helmet.hidePoweredBy())
 
 app.use(
   helmet.frameguard({
-    action: "sameorigin",
+    action: "DENY",
   })
 )
 
