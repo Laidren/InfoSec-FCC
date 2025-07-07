@@ -4,7 +4,7 @@ const helmet = require('helmet')
 
 const PORT = process.env.PORT || 3030;
 
-
+helmet.hidePoweredBy()
 
 
 
