@@ -5,13 +5,13 @@ const helmet = require('helmet')
 const PORT = process.env.PORT || 3030;
 
 
-app.use(helmet.hidePoweredBy())
+app.use(helmet.hidePoweredBy());
 
 app.use(
   helmet.frameguard({
     action: "DENY",
   })
-)
+);
 
 app.use(helmet.xssFilter());
 
