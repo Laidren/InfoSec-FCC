@@ -4,6 +4,8 @@ const helmet = require('helmet')
 
 const PORT = process.env.PORT || 3030;
 
+days = 90*24*60*60
+
 app.use(helmet.noSniff());
 app.use(helmet.hidePoweredBy());
 app.use(
@@ -14,7 +16,11 @@ app.use(
 app.use(helmet.xssFilter());
 app.use(helmet.ieNoOpen());
 
-
+app.use(helmet.hsts
+  ({
+    maxAge: days, force: true
+})
+);
 
 
 
