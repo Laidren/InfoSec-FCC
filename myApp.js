@@ -21,11 +21,18 @@ app.use(helmet.hsts
     maxAge: days, force: true
 })
 );
-/* TEST COMMENT HERE */
+
 app.use(helmet.dnsPrefetchControl())
 app.use(helmet.noCache());
 
-
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "trusted-cdn.com"],
+    }
+  })
+);
 
 
 
