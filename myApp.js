@@ -21,12 +21,12 @@ app.use(helmet.hsts
     maxAge: days, force: true
 })
 );
-
-app.use(helmet.dnsPrefetchControl(
-  {
+/* TEST COMMENT HERE */
+app.use(
+  helmet.dnsPrefetchControl({
     allow: true,
-  }
-));
+  })
+);
 
 
 
