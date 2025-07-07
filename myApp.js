@@ -22,6 +22,11 @@ app.use(helmet.hsts
 })
 );
 
+app.use(helmet.dnsPrefetchControl(
+  {
+    allow: true,
+  }
+));
 
 
 
